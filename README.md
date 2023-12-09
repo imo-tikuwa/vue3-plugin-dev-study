@@ -45,10 +45,10 @@ import { BaseButton } from '@imo-tikuwa/vue3-plugin-dev-study'
 
 ## BaseButton Properties
 
-| Option    | Required | Values                                     | Description                    |
-|-----------|----------|--------------------------------------------|--------------------------------|
-| label     |          | string                                     | The text displayed on the button|
-| size      | ✓        | 'small' \| 'medium' \| 'large'             | Size of the button             |
-| outline   | ✓        | boolean                                    | Specifies if it's an outline button or not |
-| color     | ✓        | 'primary' \| 'secondary' \| 'success' \| 'danger' \| 'warning' \| 'info' \| 'light' \| 'dark' \| 'link' | Color variant of the button |
-| disabled  | ✓        | boolean                                    | Disables the button            |
+| Option    | Required | Values                                     | Default    | Description                    |
+|-----------|----------|--------------------------------------------|------------|--------------------------------|
+| label     |          | string                                     |            | The text displayed on the button|
+| size      |          | 'small' \| 'medium' \| 'large'             | 'medium'   | Size of the button             |
+| outline   |          | boolean                                    | false      | Specifies if it's an outline button or not |
+| color     |          | 'primary' \| 'secondary' \| 'success' \| 'danger' \| 'warning' \| 'info' \| 'light' \| 'dark' \| 'link' | 'primary'  | Color variant of the button |
+| disabled  |          | boolean                                    | false      | Disables the button            |
