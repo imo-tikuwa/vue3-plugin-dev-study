@@ -1,46 +1,54 @@
-# .
+# @imo-tikuwa/vue3-plugin-dev-study
 
-This template should help get you started developing with Vue 3 in Vite.
+This is Vue3&Bootstrap5 component library development examples.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+## Installation
+```
+npm install -D @imo-tikuwa/vue3-plugin-dev-study
 ```
 
-### Compile and Hot-Reload for Development
+## Usage
+1. import plugin.
+```diff:main.ts
+import { createApp } from 'vue'
+import App from './App.vue'
 
-```sh
-npm run dev
+import { BootstrapButtonPlugin } from '@imo-tikuwa/vue3-plugin-dev-study'
+
+createApp(App).use(BootstrapButtonPlugin).mount('#app')
 ```
 
-### Type-Check, Compile and Minify for Production
+2. You can display Bootstrap5 buttons using the following code:
+```vue:SomethingPage.vue
+<script setup lang="ts">
+import { BaseButton } from '@imo-tikuwa/vue3-plugin-dev-study'
+</script>
 
-```sh
-npm run build
+<template>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <BaseButton label="Primary" class="me-2" />
+        <BaseButton label="Secondary" :color="'secondary'" class="me-2" />
+        <BaseButton label="Success" :color="'success'" class="me-2" />
+        <BaseButton label="Danger" :color="'danger'" class="me-2" />
+        <BaseButton label="Warning" :color="'warning'" class="me-2" />
+        <BaseButton label="Info" :color="'info'" class="me-2" />
+        <BaseButton label="Light" :color="'light'" class="me-2" />
+        <BaseButton label="Dark" :color="'dark'" class="me-2" />
+        <BaseButton label="Link" :color="'link'" />
+      </div>
+    </div>
+  </div>
+</template>
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## BaseButton Properties
 
-```sh
-npm run lint
-```
+| Option    | Required | Values                                     | Description                    |
+|-----------|----------|--------------------------------------------|--------------------------------|
+| label     |          | string                                     | The text displayed on the button|
+| size      | ✓        | 'small' \| 'medium' \| 'large'             | Size of the button             |
+| outline   | ✓        | boolean                                    | Specifies if it's an outline button or not |
+| color     | ✓        | 'primary' \| 'secondary' \| 'success' \| 'danger' \| 'warning' \| 'info' \| 'light' \| 'dark' \| 'link' | Color variant of the button |
+| disabled  | ✓        | boolean                                    | Disables the button            |
